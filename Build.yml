@@ -1,1 +1,5 @@
-.github/workflows/build.yml
+on:
+  push:
+    branches: [ "ana", "main", "master" ]
+  workflow_dispatch:
+  
