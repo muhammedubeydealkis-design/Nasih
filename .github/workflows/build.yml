@@ -25,6 +25,8 @@ jobs:
 
     - name: Build with Buildozer
       run: |
+        unset ANDROID_HOME
+        unset ANDROID_NDK_HOME
         buildozer -v android debug
 
     - name: Upload APK Artifact
@@ -32,3 +34,4 @@ jobs:
       with:
         name: Nasih-APK
         path: bin/*.apk
+        
