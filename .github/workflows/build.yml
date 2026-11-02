@@ -46,12 +46,17 @@ jobs:
 
     - name: Build with Buildozer
       run: |
-        unset ANDROID_HOME
-        unset ANDROID_NDK_HOME
-        buildozer -v android debug
+        env -u ANDROID_HOME \
+            -u ANDROID_SDK_ROOT \
+            -u ANDROID_NDK_HOME \
+            -u ANDROID_NDK \
+            -u ANDROID_NDK_ROOT \
+            -u ANDROID_NDK_LATEST_HOME \
+            buildozer -v android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: Nasih-APK
         path: bin/*.apk
+        
