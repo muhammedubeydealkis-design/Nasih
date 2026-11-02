@@ -52,7 +52,7 @@ jobs:
             -u ANDROID_NDK \
             -u ANDROID_NDK_ROOT \
             -u ANDROID_NDK_LATEST_HOME \
-            buildozer -v android debug
+            buildozer -v --debug android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
